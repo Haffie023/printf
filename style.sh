@@ -2,7 +2,6 @@
 
 if ! command -v betty > /dev/null; then
   echo "Error: betty not found. Please install betty (https://github.com/holbertonschool/Betty) to run this script."
-  echo "Installing Betty..."
   git clone https://github.com/holbertonschool/Betty.git
   cd Betty || exit
   chmod +x install.sh
@@ -15,15 +14,13 @@ if ! echo "" | gcc -std=gnu89 -E - > /dev/null 2>&1; then
 fi
 
 check_betty(){
-	if ! betty_output=$(betty "$1" 2>&1); then
+	if ! betty "$1" 2>&1; then
 		echo "Error: $1 is not betty compatible:"
-		echo "$betty_output"
 		exit 1
 	fi
 
-	if ! gcc_output=$(gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format -c "$1" 2>&1); then
+	if ! gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format -c "$1" 2>&1; then
 		echo "Error: $1 is not GNU89 compliant:"
-		echo "$gcc_output"
 		exit 1
 	fi
 }
@@ -62,13 +59,13 @@ else
 	echo "Nothing to be checked for betty code"
 fi
 
-echo "All files are betty compatible and GNU89 compliant."
-
 # Check if object files were created and delete them
 for file in *.o;do
 	if test -a "$file"; then
 		rm "$file"
 	fi
 done
+
+echo "Everything is fine"
 
 exit 0

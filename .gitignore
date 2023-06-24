@@ -52,11 +52,6 @@ Mkfile.old
 dkms.conf
 
 # Editor and Misc
-
-.vscode/*
+./vscode/*
 test*
-*test
-*
-!*.*
-!/**/
-*.gch
+.editorconfig

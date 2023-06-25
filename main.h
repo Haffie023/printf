@@ -23,6 +23,7 @@ int _printf(const char *format, ...);
 int _putchar (char x);
 void handle_char(va_list args);
 void handle_string(va_list args);
+void handle_percentage(__attribute__((unused)) va_list args);
 
 
 # endif

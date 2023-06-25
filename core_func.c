@@ -25,22 +25,22 @@ int _printf(const char *format, ...)
 	{
 		j = 0;
 
-		while (formats[j].fmt != NULL)
+		if (format[i] == '%')
 		{
-			if (format[i] == '%')
+			while (formats[j].fmt != NULL)
 			{
-				i++;
-				if (formats[j].fmt[0] == format[i])
+				if (formats[j].fmt[0] == format[i + 1])
 				{
 					formats[j].function(args);
+					i++;
 					break;
 				}
+				j++;
 			}
-			else
-			{
-				_putchar(format[i]);
-			}
-			j++;
+		}
+		else
+		{
+			_putchar(format[i]);
 		}
 		i++;
 	}

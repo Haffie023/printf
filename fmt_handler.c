@@ -6,11 +6,11 @@
  * Return: Always 0
  */
 
-int handle_char(va_list args)
+void handle_char(va_list args)
 {
 	char c = va_arg(args, int);
 
-	return (_putchar(c));
+	_putchar(c);
 }
 
 /**
@@ -19,14 +19,13 @@ int handle_char(va_list args)
  * Return: length of string
 */
 
-int handle_string(va_list args)
+void handle_string(va_list args)
 {
 	char *str = va_arg(args, char *);
 	int i;
 
 	for (i = 0; str[i] != '\0'; i++)
 		_putchar(str[i]);
-	return (i);
 
 }
 

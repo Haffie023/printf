@@ -15,13 +15,13 @@
 typedef struct fmt_spec
 {
 	char *fmt;
-	int (*function)(va_list);
+	void (*function)(va_list);
 } fmt_spec;
 
 int _printf(const char *format, ...);
 int _putchar (char x);
-int handle_char(va_list args);
-int handle_string(va_list args);
+void handle_char(va_list args);
+void handle_string(va_list args);
 
 
 # endif

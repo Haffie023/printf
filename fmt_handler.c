@@ -40,6 +40,3 @@ void handle_percentage(__attribute__((UNUSED)) va_list args)
 {
     _putchar('%');
 }
-
-// okay now?
-// yeah

@@ -16,6 +16,7 @@ int _printf(const char *format, ...)
 	fmt_spec formats[] = {
 		{"c", handle_char},
 		{"s", handle_string},
+		{"%", handle_percentage},
 		{NULL, NULL}
 	};
 

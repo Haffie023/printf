@@ -6,9 +6,6 @@
  * Return: Always 0
  */
 
-// let's get started
-
-
 void handle_char(va_list args)
 {
 	char c = va_arg(args, int);
@@ -34,9 +31,9 @@ void handle_string(va_list args)
  * handle_percentage - a function that handles percentage
  * @args: argument passed
  * Return: %
- * 
+ *
 */
-void handle_percentage(__attribute__((UNUSED)) va_list args)
+void handle_percentage(__attribute__((unused)) va_list args)
 {
-    _putchar('%');
+	_putchar('%');
 }

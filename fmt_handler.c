@@ -30,6 +30,7 @@ int handle_string(va_list args)
 
 	return (i);
 }
+// hello
 /**
  * handle_percentage - a function that handles percentage
  * @args: argument passed
@@ -43,9 +44,7 @@ int handle_percentage(__attribute__((unused)) va_list args)
 }
 /**
  * handle_decimals - a function that handles decimals
- * @num: the number
- * @len: the length
- * @mod: the modulo
+ * @args: The arguments passed 
  * Return: decimal
 */
 int handle_decimals(va_list args)

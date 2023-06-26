@@ -42,3 +42,5 @@ int handle_percentage(__attribute__((unused)) va_list args)
 	return (1);
 }
 
+// hello
+// I am here now

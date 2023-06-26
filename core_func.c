@@ -16,10 +16,11 @@ int _printf(const char *format, ...)
 		{"c", handle_char},
 		{"s", handle_string},
 		{"%", handle_percentage},
+		{"d", handle_decimals},
 		{NULL, NULL}
 	};
 	va_start(args, format);
-	while (i < fmt_len)
+	for (i = 0; i < fmt_len; i++)
 	{
 		j = 0;
 		if (format[i] == '%')
@@ -45,7 +46,6 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);
 			printed_char++;
 		}
-		i++;
 	}
 	va_end(args);
 	return (printed_char);

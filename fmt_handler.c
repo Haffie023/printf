@@ -44,21 +44,21 @@ int handle_percentage(__attribute__((unused)) va_list args)
 }
 /**
  * handle_decimals - a function that handles decimals
- * @args: The arguments passed 
+ * @args: The arguments passed
  * Return: decimal
 */
 int handle_decimals(va_list args)
 {
-	int n;				
+	int n;
 	int dec;
 	int len;
 	unsigned int num;
-	
+
 	n = va_arg(args, int);
 	len = 0;
 	dec = 1;
-	if (n < 0)				
-	{						
+	if (n < 0)
+	{
 		len += _putchar('-');
 		num = n * -1;
 	}

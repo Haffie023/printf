@@ -30,7 +30,7 @@ int handle_string(va_list args)
 
 	return (i);
 }
-// hello
+
 /**
  * handle_percentage - a function that handles percentage
  * @args: argument passed
@@ -49,22 +49,33 @@ int handle_percentage(__attribute__((unused)) va_list args)
 */
 int handle_decimals(va_list args)
 {
-	int num = va_arg(args, int);
-	int len = 0;	
-	if (num < 0)
-	{
-		_putchar ('-');
-		len++;
-	}
-
-	while (num > 0)
-	{
-		int mod =  num % 10;
-		va_putchar(48 + mod);
-		num = num / 10;
-		len++;
-	}
-
-	return (len);
+	int n;				
+	int dec;
+	int len;
+	unsigned int num;
 	
+	n = va_arg(args, int);
+	len = 0;
+	dec = 1;
+	{if (n < 0)				
+	{						
+		len += _write_char('-');
+		num = n * -1;
+	}
+	else
+		num = n;
+
+	for (; num / dec > 9; )
+		dec *= 10;
+
+	for (; dec != 0; )
+
+	{
+		len += _write_char('0' + num / dec);
+		num %= dec;
+		dec /= 10;
+	}
+
+	}
+	return (len);
 }

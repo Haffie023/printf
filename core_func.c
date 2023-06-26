@@ -1,5 +1,7 @@
 # include "main.h"
 
+int parser(const char *format, fmt_spec f_list[], va_list args);
+
 /**
  * _printf - function that prints characters
  *@format: format specifier
@@ -9,8 +11,7 @@
 
 int _printf(const char *format, ...)
 {
-	int i = 0, j, printed_char = 0;
-	int fmt_len = strlen(format);
+	int printed_char = 0;
 	va_list args;
 	fmt_spec formats[] = {
 		{"c", handle_char},
@@ -20,6 +21,24 @@ int _printf(const char *format, ...)
 		{NULL, NULL}
 	};
 	va_start(args, format);
+	printed_char = parser(format, formats, args);
+	va_end(args);
+	return (printed_char);
+}
+
+/**
+ * parser - A format replacement function
+ * @format: The format to be considered
+ * @formats: The list of available formats
+ * @args: The arguments to be passed
+ * Return: The number of arguments printed
+*/
+
+int parser(const char *format, fmt_spec formats[], va_list args)
+{
+	int i = 0, j, printed_char = 0;
+	int fmt_len = strlen(format);
+
 	for (i = 0; i < fmt_len; i++)
 	{
 		j = 0;
@@ -47,6 +66,5 @@ int _printf(const char *format, ...)
 			printed_char++;
 		}
 	}
-	va_end(args);
 	return (printed_char);
 }

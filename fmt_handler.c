@@ -55,7 +55,7 @@ int handle_decimals(va_list args)
 	while (num > 0)
 	{
 		int mod =  num % 10;
-		va_putchar(48 + mod)
+		va_putchar(48 + mod);
 		num = num / 10;
 		len++;
 	}

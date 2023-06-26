@@ -57,9 +57,9 @@ int handle_decimals(va_list args)
 	n = va_arg(args, int);
 	len = 0;
 	dec = 1;
-	{if (n < 0)				
+	if (n < 0)				
 	{						
-		len += _write_char('-');
+		len += _putchar('-');
 		num = n * -1;
 	}
 	else
@@ -71,9 +71,9 @@ int handle_decimals(va_list args)
 	for (; dec != 0; )
 
 	{
-		len += _write_char('0' + num / dec);
+		len += _putchar('0' + num / dec);
 		num %= dec;
 		dec /= 10;
 	}
-Return (len);
+	return (len);
 }

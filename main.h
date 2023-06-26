@@ -24,6 +24,7 @@ int _putchar (char x);
 int handle_char(va_list args);
 int handle_string(va_list args);
 int handle_percentage(__attribute__((unused)) va_list args);
-
+int handle_decimals(va_list args);
+int handle_integers (va_list args);
 
 # endif

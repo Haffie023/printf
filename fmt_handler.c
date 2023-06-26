@@ -42,5 +42,24 @@ int handle_percentage(__attribute__((unused)) va_list args)
 	return (1);
 }
 
-// hello
-// I am here now
+int handle_decimals(va_list args)
+{
+	int num = va_arg(args, int);
+	int len = 0;	
+	if (num < 0)
+	{
+		_putchar ('-');
+		len++;
+	}
+
+	while (num > 0)
+	{
+		int mod =  num % 10;
+		va_putchar(48 + mod)
+		num = num / 10;
+		len++;
+	}
+
+	return (len);
+	
+}

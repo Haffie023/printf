@@ -75,7 +75,5 @@ int handle_decimals(va_list args)
 		num %= dec;
 		dec /= 10;
 	}
-
-	}
-	return (len);
+Return (len);
 }

@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 		{
 			while (formats[j].fmt != NULL)
 			{
-				if (formats[j].fmt[0] == format[i + 1])
+				if (format[i + 1] == formats[j].fmt[0])
 				{
 					formats[j].function(args);
 					i++;
@@ -38,6 +38,9 @@ int _printf(const char *format, ...)
 				}
 				j++;
 			}
+			if (formats[j].fmt == NULL)
+				_putchar('%');
+
 		}
 		else
 		{

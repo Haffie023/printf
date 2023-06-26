@@ -41,7 +41,13 @@ int handle_percentage(__attribute__((unused)) va_list args)
 	_putchar('%');
 	return (1);
 }
-
+/**
+ * handle_decimals - a function that handles decimals
+ * @num: the number
+ * @len: the length
+ * @mod: the modulo
+ * Return: decimal
+*/
 int handle_decimals(va_list args)
 {
 	int num = va_arg(args, int);

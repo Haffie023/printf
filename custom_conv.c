@@ -12,6 +12,9 @@ int binary_function(va_list args)
 	int i = 0, j = 0;
 	char *value = malloc(sizeof(char) * 33);
 
+	if (value == NULL)
+		return (EXIT_FAILURE);
+
 	while (num != 0)
 	{
 		value[j++] = '0' + num % 2;

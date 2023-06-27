@@ -23,6 +23,7 @@ int _printf(const char *format, ...)
 		{"o", octal_function},
 		{"x", hexa_function},
 		{"X", heXa_function},
+		{"u", handle_unsigned_int},
 		{NULL, NULL}
 	};
 	va_start(args, format);

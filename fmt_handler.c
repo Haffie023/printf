@@ -25,9 +25,6 @@ int handle_string(va_list args)
 	char *str = va_arg(args, char *);
 	int i;
 
-	if (str == NULL)
-		str = "";
-
 	for (i = 0; str[i] != '\0'; i++)
 		_putchar(str[i]);
 
@@ -52,22 +49,29 @@ int handle_percentage(__attribute__((unused)) va_list args)
 */
 int handle_decimals(va_list args)
 {
-	int dec = 1, len = 0;
-	int num = va_arg(args, int);
+	int n;
+	int dec;
+	int len;
+	unsigned int num;
 
-	if (num < 0)
+	n = va_arg(args, int);
+	len = 0;
+	dec = 1;
+	if (n < 0)
 	{
 		len += _putchar('-');
-		num = -num;
+		num = n * -1;
 	}
-
+	else
+		num = n;
 
 	for (; num / dec > 9; )
 		dec *= 10;
 
 	for (; dec != 0; )
+
 	{
-		len += _putchar(48 + num / dec);
+		len += _putchar('0' + num / dec);
 		num %= dec;
 		dec /= 10;
 	}

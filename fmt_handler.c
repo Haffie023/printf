@@ -19,7 +19,6 @@ int handle_char(va_list args)
  * @args: arguments passed
  * Return: length of string
 */
-
 int handle_string(va_list args)
 {
 	char *str = va_arg(args, char *);

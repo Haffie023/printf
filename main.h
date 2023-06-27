@@ -30,5 +30,6 @@ int handle_percentage(__attribute__((unused)) va_list args);
 int handle_decimals(va_list args);
 void _rev_str(char *str);
 int binary_function(va_list args);
+int handle_unsigned_int(va_list args);
 
 # endif

@@ -1,22 +1,39 @@
 #include "main.h"
+
 /**
- * handle_unsigned_int - dummy text
- * @args: dummy text
- * Return: dummy text
+ * handle_unsigned_int - a function that handles unsigned int
+ * @args: arguments passed
+ * Return: len
 */
 
 int handle_unsigned_int(va_list args)
 {
 	unsigned int num = va_arg(args, int);
-    
+    int len = 0, mod, j = 0;
+    char *value = malloc(sizeof(char) * BUFFER);
 
+	if (value == NULL)
+		return (EXIT_FAILURE);
 
+	if (num == 0)
+	{
+		_putchar('0');
+		len++;
+	}
+
+	while (num > 0)
+	{
+		mod = num % 10;
+		value[j++] = 48 + mod;
+		num = num / 10;
+		len++;
+	}
+
+	value[j] = '\0';
+
+	_rev_str(value);
+
+	free(value);
+
+	return (len);
 }
-
-// we have a number like 123
-// we get this number from args and we initialize a tracker like i or len 
-// to keep track of the numbers we have printed
-// so we have this number 123 so we split
-// it to an array 3 then 2 then 1 
-// we can use any loop; like if and while loops right?
-// are you there?

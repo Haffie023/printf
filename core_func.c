@@ -40,11 +40,12 @@ int parser(const char *format, fmt_spec formats[], va_list args)
 {
 	int i = 0, j, printed_char = 0;
 	int fmt_len = strlen(format);
+	char fmt_spec = '%';
 
 	for (i = 0; i < fmt_len; i++)
 	{
 		j = 0;
-		if (format[i] == '%')
+		if (format[i] == fmt_spec)
 		{
 			while (formats[j].fmt != NULL)
 			{
@@ -58,7 +59,7 @@ int parser(const char *format, fmt_spec formats[], va_list args)
 			}
 			if (formats[j].fmt == NULL && format[i + 1] != '\0')
 			{
-				_putchar('%');
+				_putchar(format[i]);
 				printed_char++;
 			}
 		}

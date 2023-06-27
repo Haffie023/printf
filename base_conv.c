@@ -9,8 +9,8 @@
 int handle_unsigned_int(va_list args)
 {
 	unsigned int num = va_arg(args, int);
-    int len = 0, mod, j = 0;
-    char *value = malloc(sizeof(char) * BUFFER);
+	int len = 0, mod, j = 0;
+	char *value = malloc(sizeof(char) * BUFFER);
 
 	if (value == NULL)
 		return (EXIT_FAILURE);

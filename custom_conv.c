@@ -1,9 +1,11 @@
 #include "main.h"
+
 /**
- * binary_function : a function that handles binary
+ * binary_function - a function that handles binary
  * @args: arguments passed
  * Return: Binary
 */
+
 int binary_function(va_list args)
 {
 	unsigned int num = va_arg(args, int);
@@ -13,7 +15,7 @@ int binary_function(va_list args)
 	while (num != 0)
 	{
 		value[j++] = '0' + num % 2;
-		num = num/2;
+		num = num / 2;
 		i++;
 	}
 

@@ -7,6 +7,8 @@
 # include <string.h>
 # include <stdlib.h>
 
+# define BUFFER 1024
+
 /**
  * struct fmt_spec - match the conversion specifiers for printf
  * @fmt: the format

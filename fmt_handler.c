@@ -37,40 +37,54 @@ int handle_string(va_list args)
  * Return: %
  *
 */
+
 int handle_percentage(__attribute__((unused)) va_list args)
 {
 	_putchar('%');
 	return (1);
 }
+
 /**
  * handle_decimals - a function that handles decimals
  * @args: The arguments passed
  * Return: decimal
 */
+
 int handle_decimals(va_list args)
 {
-	int dec = 1, len = 0;
-	unsigned int num;
-	int n = va_arg(args, int);
+	int len = 0, mod, j = 0;
+	int num = va_arg(args, int);
+	char *value = malloc(sizeof(char) * BUFFER);
 
-	if (n < 0)
+	if (value == NULL)
+		return (EXIT_FAILURE);
+
+	if (num == 0)
 	{
-		len += _putchar('-');
-		num = n * -1;
+		_putchar('0');
+		len++;
 	}
-	else
-		num = n;
-
-	for (; num / dec > 9; )
-		dec *= 10;
-
-	for (; dec != 0; )
-
+	else if (num < 0)
 	{
-		len += _putchar('0' + num / dec);
-		num %= dec;
-		dec /= 10;
+		_putchar('-');
+		num = -num;
+		len++;
 	}
+
+	while (num > 0)
+	{
+		mod = num % 10;
+		value[j++] = 48 + mod;
+		num = num / 10;
+		len++;
+	}
+
+	value[j] = '\0';
+
+	_rev_str(value);
+
+	free(value);
+
 	return (len);
 }
 

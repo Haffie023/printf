@@ -55,7 +55,7 @@ int parser(const char *format, fmt_spec formats[], va_list args)
 				}
 				j++;
 			}
-			if (formats[j].fmt == NULL)
+			if (formats[j].fmt == NULL && format[i + 1] != '\0')
 			{
 				_putchar('%');
 				printed_char++;

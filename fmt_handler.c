@@ -67,6 +67,8 @@ int handle_decimals(va_list args)
 		len++;
 	}
 
+	value[j] = '\0';
+
 	_rev_str(value);
 
 	free(value);

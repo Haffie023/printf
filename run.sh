@@ -19,7 +19,7 @@ if [ $c_files_exist == true ]; then
 		if gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ./*.c "$test_files" -o "${test_files%.*}.out"; then
 			./"${test_files%.*}.out"
 			echo -e "\n======= $test_files =======\n"
-			rm "${test_files%.*}.out"
+			# rm "${test_files%.*}.out"
 		fi
 	done
 fi

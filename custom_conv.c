@@ -18,6 +18,7 @@ int binary_function(va_list args)
 		num = num / 2;
 		i++;
 	}
+	value[j] = '\0';
 
 	_rev_str(value);
 	free(value);

@@ -66,3 +66,67 @@ int octal_function(va_list args)
 
 	return (i);
 }
+
+/**
+ * hexa_function- a function that handles hexadecimal
+ * @args: arguments passed
+ * Return: hexadecimal
+*/
+
+int hexa_function(va_list args)
+{
+	unsigned int num = va_arg(args, int);
+	int i = 0, j = 0;
+	char *value = malloc(sizeof(char) * BUFFER);
+
+	if (value == NULL)
+		return (EXIT_FAILURE);
+
+	while (num != 0)
+	{
+		if ((num % 16) > 9)
+			value[j++] = 87 + num % 16;
+		else
+			value[j++] = '0' + num % 16;
+		num = num / 16;
+		i++;
+	}
+	value[j] = '\0';
+
+	_rev_str(value);
+	free(value);
+
+	return (i);
+}
+
+/**
+ * heXa_function- a function that handles heXadecimal integer
+ * @args: arguments passed
+ * Return: heXadecimal
+*/
+
+int heXa_function(va_list args)
+{
+	unsigned int num = va_arg(args, int);
+	int i = 0, j = 0;
+	char *value = malloc(sizeof(char) * BUFFER);
+
+	if (value == NULL)
+		return (EXIT_FAILURE);
+
+	while (num != 0)
+	{
+		if ((num % 16) > 9)
+			value[j++] = 55 + num % 16;
+		else
+			value[j++] = '0' + num % 16;
+		num = num / 16;
+		i++;
+	}
+	value[j] = '\0';
+
+	_rev_str(value);
+	free(value);
+
+	return (i);
+}

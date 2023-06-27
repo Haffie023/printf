@@ -31,5 +31,8 @@ int handle_decimals(va_list args);
 void _rev_str(char *str);
 int binary_function(va_list args);
 int handle_unsigned_int(va_list args);
+int octal_function(va_list args);
+int heXa_function(va_list args);
+int hexa_function(va_list args);
 
 # endif

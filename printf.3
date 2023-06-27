@@ -7,9 +7,30 @@ _printf \- formatted output conversion
 .sp
 .B int _printf(const char *\fPformat\fB, ...);
 .SH DESCRIPTION
+This is a task that was give by ALX that is based on \fI<stdio.h>\gP
+.br
+It defines a couple of the functions but doesn't handle most
+.br
+There is no gurantee that it will work safely or produce expected results
+.SH EXAMPLE
+.nf
+# include "main.h"
+
+int main(void)
+{
+	char a = 'a';
+	char *str = "_printf";
+	_printf("This is %c %s function", a, str);
+	return (0);
+}
+.SH SEE ALSO
+.IR printf(3)
+.SH BUGS
+Please visit https://github.com/Haffie023/printf/issues/
 .SH AUTHORS
-.B Haffie023
-.B gekkowrld
+.B Hafsa Muchoki https://github.com/Haffie023
+.br
+.B Gekko Wrld https://github.com/gekkowrld
 
 // why is this important? It's not
 // ooh hahaha. okay. carry on

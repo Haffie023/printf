@@ -20,6 +20,9 @@ int _printf(const char *format, ...)
 		{"d", handle_decimals},
 		{"i", handle_decimals},
 		{"b", binary_function},
+		{"o", octal_function},
+		{"x", hexa_function},
+		{"X", heXa_function},
 		{NULL, NULL}
 	};
 	va_start(args, format);

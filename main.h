@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <stdarg.h>
 # include <string.h>
+# include <stdlib.h>
 
 /**
  * struct fmt_spec - match the conversion specifiers for printf
@@ -25,5 +26,7 @@ int handle_char(va_list args);
 int handle_string(va_list args);
 int handle_percentage(__attribute__((unused)) va_list args);
 int handle_decimals(va_list args);
+void _rev_str(char *str);
+int binary_function(va_list args);
 
 # endif

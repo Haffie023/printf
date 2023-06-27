@@ -19,6 +19,7 @@ int _printf(const char *format, ...)
 		{"%", handle_percentage},
 		{"d", handle_decimals},
 		{"i", handle_decimals},
+		{"b", binary_function},
 		{NULL, NULL}
 	};
 	va_start(args, format);

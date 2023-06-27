@@ -37,3 +37,32 @@ int handle_unsigned_int(va_list args)
 
 	return (len);
 }
+
+/**
+ * octal_function- a function that handles octal
+ * @args: arguments passed
+ * Return: octal
+*/
+
+int octal_function(va_list args)
+{
+	unsigned int num = va_arg(args, int);
+	int i = 0, j = 0;
+	char *value = malloc(sizeof(char) * BUFFER);
+
+	if (value == NULL)
+		return (EXIT_FAILURE);
+
+	while (num != 0)
+	{
+		value[j++] = '0' + num % 8;
+		num = num / 8;
+		i++;
+	}
+	value[j] = '\0';
+
+	_rev_str(value);
+	free(value);
+
+	return (i);
+}

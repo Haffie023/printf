@@ -63,7 +63,7 @@ int handle_decimals(va_list args)
 	{
 		mod = num % 10;
 		value[j++] = 48 + mod;
-		num = num/10;
+		num = num / 10;
 		len++;
 	}
 

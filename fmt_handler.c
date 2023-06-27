@@ -49,14 +49,10 @@ int handle_percentage(__attribute__((unused)) va_list args)
 */
 int handle_decimals(va_list args)
 {
-	int n;
-	int dec;
-	int len;
+	int dec = 1, len = 0;
 	unsigned int num;
+	int n = va_arg(args, int);
 
-	n = va_arg(args, int);
-	len = 0;
-	dec = 1;
 	if (n < 0)
 	{
 		len += _putchar('-');

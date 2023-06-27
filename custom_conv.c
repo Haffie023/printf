@@ -19,4 +19,6 @@ int binary_function(va_list args)
 
 	_rev_str(value);
 	free(value);
+
+	return (i);
 }

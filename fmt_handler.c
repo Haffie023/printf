@@ -87,3 +87,51 @@ int handle_decimals(va_list args)
 
 	return (len);
 }
+
+/**
+ * handle_S_string - handles string
+ * @args: arguments passed
+ * Return: i
+*/
+
+int handle_S_string(va_list args)
+{
+	char *str = va_arg(args, char *);
+	int i = 0;
+
+	for (i = 0; *str != '\0'; i++)
+	{
+		if ((int)str[i] < 32 || (int)str[i] >= 127)
+		{
+			if ((int)str[i] < 9)
+			{
+				_putchar('0');
+				_putchar(48 + (int)str[i]);
+			}
+			else if ((int)str[i] > 9 && (int)str[i] < 16)
+			{
+				_putchar('0');
+				_putchar(87 + (int)str[i]);
+			}
+			else if ((int)str[i] > 16 && (int)str[i] < 25)
+			{
+				_putchar('1');
+				_putchar(48 + (int)str[i]);
+			}
+			else if ((int)str[i] > 25 && (int)str[i] < 32)
+			{
+				_putchar('1');
+				_putchar(87 + (int)str[i]);
+			}
+			else if ((int)str[i] >= 128)
+			{
+				_putchar('8');
+				_putchar(48 + (int)str[i]);
+			}
+		}
+		else
+			_putchar(str[i]);
+	}
+
+	return (i);
+}

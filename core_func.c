@@ -24,6 +24,7 @@ int _printf(const char *format, ...)
 		{"x", hexa_function},
 		{"X", heXa_function},
 		{"u", handle_unsigned_int},
+		{"S", handle_S_string},
 		{NULL, NULL}
 	};
 	va_start(args, format);

@@ -15,7 +15,7 @@ int _putchar (char x)
 /**
  * _err_putchar - A function that is used to
  * print characters to the stderr
- * @x: The digit to be printed
+ * @str: The digit to be printed
  * Return: The number of characters written
 */
 

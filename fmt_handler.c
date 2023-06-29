@@ -106,8 +106,8 @@ int handle_S_string(va_list args)
 	{
 		if (str[i] < 32 || str[i] >= 127)
 		{
-			_putchar('\\');
-			_putchar('x');
+			_putchar(92);
+			_putchar(120);
 
 			ch = (unsigned char)str[i];
 			high = (ch >> 4) & 0xF;

@@ -91,38 +91,3 @@ int handle_decimals(va_list args)
 
 	return (len);
 }
-
-/**
- * handle_S_string - A function that prints out
- * hexadecimal string in place of a non printable character
- * @args: The arguments/the string to be passed
- *
- * Return: The number of characters printed
-*/
-
-int handle_S_string(va_list args)
-{
-	char *str = va_arg(args, char*);
-	size_t i = 0;
-	unsigned char ch, high, low;
-
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		if (str[i] < 32 || str[i] >= 127)
-		{
-			_putchar(92);
-			_putchar(120);
-
-			ch = (unsigned char)str[i];
-			high = (ch >> 4) & 0xF;
-			low = ch & 0xF;
-			_putchar(high < 10 ? '0' + high : 'A' + high - 10);
-			_putchar(low < 10 ? '0' + low : 'A' + low - 10);
-		}
-		else
-			_putchar(str[i]);
-	}
-
-	return (i);
-}
-

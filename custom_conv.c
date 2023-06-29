@@ -34,3 +34,41 @@ int binary_function(va_list args)
 
 	return (i);
 }
+
+/**
+ * handle_S_string - A function that prints out
+ * hexadecimal string in place of a non printable character
+ * @args: The arguments/the string to be passed
+ *
+ * Return: The number of characters printed
+*/
+
+int handle_S_string(va_list args)
+{
+	char *str = va_arg(args, char*);
+	size_t i = 0;
+
+	if (str == NULL)
+		str[i] = 0;
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		if (str[i] < 32 || str[i] >= 127)
+		{
+			_putchar(92);
+			_putchar(120);
+			if (str[i] < 16)
+			{
+				_putchar(48);
+				_printf("%X", str[i]);
+			}
+			else
+				_printf("%X", str[i]);
+
+		}
+		else
+			_putchar(str[i]);
+	}
+
+	return (i);
+}

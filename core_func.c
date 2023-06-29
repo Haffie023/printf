@@ -44,10 +44,12 @@ int _printf(const char *format, ...)
 int parser(const char *format, fmt_spec formats[], va_list args)
 {
 	int i = 0, j, printed_char = 0;
-	int fmt_len = strlen(format);
 	char fmt_spec = '%';
 
-	for (i = 0; i < fmt_len; i++)
+	if (format == NULL)
+		format = "";
+
+	for (i = 0; format[i] != '\0'; i++)
 	{
 		j = 0;
 		if (format[i] == fmt_spec)

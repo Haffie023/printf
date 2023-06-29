@@ -25,6 +25,9 @@ int handle_string(va_list args)
 	char *str = va_arg(args, char *);
 	int i;
 
+	if (str == NULL)
+		str = "(null)";
+
 	for (i = 0; str[i] != '\0'; i++)
 		_putchar(str[i]);
 
@@ -54,7 +57,7 @@ int handle_decimals(va_list args)
 {
 	int len = 0, mod, j = 0;
 	int num = va_arg(args, int);
-	char *value = malloc(sizeof(char) * BUFFER);
+	char *value = malloc(sizeof(char) * (BUFFER));
 
 	if (value == NULL)
 		return (EXIT_FAILURE);
@@ -64,10 +67,11 @@ int handle_decimals(va_list args)
 		_putchar('0');
 		len++;
 	}
-	else if (num < 0)
+
+	if (num < 0)
 	{
 		_putchar('-');
-		num = -num;
+		num = -(num);
 		len++;
 	}
 

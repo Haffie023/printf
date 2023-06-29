@@ -6,6 +6,7 @@
 #include <stdarg.h>
 # include <string.h>
 # include <stdlib.h>
+# include <limits.h>
 
 # define BUFFER 1024
 

@@ -54,6 +54,12 @@ int octal_function(va_list args)
 	if (value == NULL)
 		return (EXIT_FAILURE);
 
+	if (num == 0)
+	{
+		value[j++] = 48;
+		i++;
+	}
+
 	while (num != 0)
 	{
 		value[j++] = '0' + num % 8;
@@ -82,6 +88,12 @@ int hexa_function(va_list args)
 
 	if (value == NULL)
 		return (EXIT_FAILURE);
+
+	if (num == 0)
+	{
+		value[j++] = 48;
+		i++;
+	}
 
 	while (num != 0)
 	{
@@ -114,6 +126,12 @@ int heXa_function(va_list args)
 
 	if (value == NULL)
 		return (EXIT_FAILURE);
+
+	if (num == 0)
+	{
+		value[j++] = 48;
+		i++;
+	}
 
 	while (num != 0)
 	{

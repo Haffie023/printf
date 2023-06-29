@@ -9,7 +9,27 @@
 
 int _putchar (char x)
 {
-	return (write(1, &x, 1));
+	return (write(STDOUT_FILENO, &x, 1));
+}
+
+/**
+ * _err_putchar - A function that is used to
+ * print characters to the stderr
+ * @x: The digit to be printed
+ * Return: The number of characters written
+*/
+
+int _err_putchar(const char *str)
+{
+	int i = 0;
+
+	while (str[i] != '\0')
+	{
+		write(STDERR_FILENO, &str[i], 1);
+		i++;
+	}
+
+	return (i);
 }
 
 /**

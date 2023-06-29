@@ -63,7 +63,7 @@ int handle_S_string(va_list args)
 				_printf("%X", str[i]);
 			}
 			else
-				_printf("%X", str[i]);
+				_printf("%X", str[i]); /* A classic case of ouroboros or recursion */
 
 		}
 		else

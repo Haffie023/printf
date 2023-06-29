@@ -89,45 +89,31 @@ int handle_decimals(va_list args)
 }
 
 /**
- * handle_S_string - handles string
- * @args: arguments passed
- * Return: i
+ * handle_S_string - A function that prints out
+ * hexadecimal string in place of a non printable character
+ * @args: The arguments/the string to be passed
+ *
+ * Return: The number of characters printed
 */
 
 int handle_S_string(va_list args)
 {
-	char *str = va_arg(args, char *);
-	int i = 0;
+	char *str = va_arg(args, char*);
+	size_t i = 0;
+	unsigned char ch, high, low;
 
-	for (i = 0; *str != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		if ((int)str[i] < 32 || (int)str[i] >= 127)
+		if (str[i] < 32 || str[i] >= 127)
 		{
-			if ((int)str[i] < 9)
-			{
-				_putchar('0');
-				_putchar(48 + (int)str[i]);
-			}
-			else if ((int)str[i] > 9 && (int)str[i] < 16)
-			{
-				_putchar('0');
-				_putchar(87 + (int)str[i]);
-			}
-			else if ((int)str[i] > 16 && (int)str[i] < 25)
-			{
-				_putchar('1');
-				_putchar(48 + (int)str[i]);
-			}
-			else if ((int)str[i] > 25 && (int)str[i] < 32)
-			{
-				_putchar('1');
-				_putchar(87 + (int)str[i]);
-			}
-			else if ((int)str[i] >= 128)
-			{
-				_putchar('8');
-				_putchar(48 + (int)str[i]);
-			}
+			_putchar(92);
+			_putchar(120);
+
+			ch = (unsigned char)str[i];
+			high = (ch >> 4) & 0xF;
+			low = ch & 0xF;
+			_putchar(high < 10 ? '0' + high : 'A' + high - 10);
+			_putchar(low < 10 ? '0' + low : 'A' + low - 10);
 		}
 		else
 			_putchar(str[i]);
@@ -135,3 +121,4 @@ int handle_S_string(va_list args)
 
 	return (i);
 }
+

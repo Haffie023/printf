@@ -56,7 +56,7 @@ int handle_percentage(__attribute__((unused)) va_list args)
 int handle_decimals(va_list args)
 {
 	int len = 0, mod, j = 0;
-	int num = va_arg(args, int);
+	long int num = va_arg(args, int);
 	char *value = malloc(sizeof(char) * (BUFFER));
 
 	if (value == NULL)

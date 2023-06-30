@@ -4,4 +4,3 @@ This is a group project that is focused on implementing a custom printf project.
 
 This implementation is super slow.
 
-It operates at a "speed" of O(n)

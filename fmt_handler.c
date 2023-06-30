@@ -91,16 +91,3 @@ int handle_decimals(va_list args)
 
 	return (len);
 }
-/**
- *  handle_address_pointer - prints memory address
- * @args: arguments passed
- * 
- * Return: pointer to memory address
- *  
-*/
-int handle_address_pointer(va_list args)
-{
-	unsigned long int num = va_arg(args, unsigned long int);
-
-	_printf("%x", num);
-}

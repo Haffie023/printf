@@ -1,4 +1,4 @@
-.TH "_PRINTF" 3 GNU "_printf Manual"
+.TH "_PRINTF" 3 GNU "_printf Manual" "_printf Manual"
 .SH NAME
 _printf \- formatted output conversion
 .SH SYNOPSIS
@@ -8,11 +8,20 @@ _printf \- formatted output conversion
 .B int _printf(const char *\fPformat\fB, ...);
 
 .SH DESCRIPTION
-This is a task that was give by ALX that is based on \fI<stdio.h>\gP
+This is a task that was give by ALX that is based on \fI<stdio.h>\fP
 .br
 It defines a couple of the functions but doesn't handle most
 .br
 There is no gurantee that it will work safely or produce expected results
+.br
+.sp
+Compile the program by using
+.br
+.B gcc \-Wall \-Wextra \-Werror \-pedantic \-std=gnu89 \-Wno\-format
+.br
+Make sure that a file that has a main function exists in the root directory
+.br
+No more than one file should contain a main function at any single time
 
 .SH OPTIONS
 .TP 8
@@ -27,6 +36,16 @@ Prints out an array of characters
 .TP 8
 .B %S
 Functions like \fB%s\fP but prints out hexadecimal value instead of unprintable character.
+.TP 8
+.B [ %x || %X ]
+Converts decimal numbers into hexadecimal.
+They print values matching their cases
+.TP 8
+.B %b
+Converts decimal values into its binary equivalent
+.TP 8
+.B %o
+Converts decimal values into its octal representation
 
 .SH EXAMPLE
 .nf

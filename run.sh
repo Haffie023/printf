@@ -3,7 +3,7 @@
 style="style.sh"
 o_f="style_file"
 chmod +x $style
-
+directory="test"
 ./$style > $o_f
 c_files_exist=false
 
@@ -15,7 +15,7 @@ for file in *.c; do
 done
 
 if [ $c_files_exist == true ]; then
-	for test_files in test/*.c; do
+	for test_files in "${directory}"/*.c; do
 		if gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ./*.c "$test_files" -o "${test_files%.*}.out"; then
 			echo -e "\n======= $test_files =======\n"
 			./"${test_files%.*}.out"

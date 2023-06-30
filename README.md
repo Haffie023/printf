@@ -21,10 +21,10 @@ The manual on how to use the printf can be found in the `printf.3` and can be in
 
 You can compile the project manually or using the `run.sh` script.
 Make sure that the file(s) containing `main` function is in the test directory or you can modify the code to whichever directory you want.
-To run manually use:
 
-`gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c` and make sure that the file that contains the `main` function is present in the root.
-Make sure only one file with `main` function exist at a time in the root folder.
+To run manually use:  
+`gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c`  
+Make sure that the only one file that contains the `main` function is present in the root.
 
 ## Manual
 

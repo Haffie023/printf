@@ -25,7 +25,6 @@ typedef struct fmt_spec
 
 int _printf(const char *format, ...);
 int _putchar (char x);
-int _err_putchar(const char *str);
 int handle_char(va_list args);
 int handle_string(va_list args);
 int handle_percentage(__attribute__((unused)) va_list args);

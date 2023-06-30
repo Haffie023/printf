@@ -13,26 +13,6 @@ int _putchar (char x)
 }
 
 /**
- * _err_putchar - A function that is used to
- * print errors to the stderr
- * @str: The digit to be printed
- * Return: The number of characters written
-*/
-
-int _err_putchar(const char *str)
-{
-	int i = 0;
-
-	while (str[i] != '\0')
-	{
-		write(STDERR_FILENO, &str[i], 1);
-		i++;
-	}
-
-	return (i);
-}
-
-/**
  * _rev_str - A function to reverse strings
  * @str: The string to be reversed
 */
